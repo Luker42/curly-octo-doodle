@@ -1,0 +1,59 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+       body{
+        text-align: center;
+        background: #00ECB9;
+        font-family: sans-serif;
+        font-weight: 100;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="pop.js"></script>
+    
+  </head>
+  <body>
+    <div id ="wrapper">
+      <div id = "options">
+        <label for = "sitename">Block this site (Must be input as www.thissite.com ex: "www.reddit.com")</label>
+        <input id = "sitename" type="text"><br>
+        <label for = "blocktime">How long will it be blocked?</label><br>
+        <select id = "blocktime">
+          <option value ="10">10 minutes</option>
+          <option value ="20">20 minutes</option>
+          <option value ="30">30 minutes</option>
+        </select><br>
+        <label for ="unblocktime">How long will it be unblocked for?</label><br>
+        <select id = "unblocktime">
+          <option value ="5">5 minutes</option>
+          <option value ="10">10 minutes</option>
+          <option value ="15">15 minutes</option>
+        </select>
+        <button id = "submit">Block it!</button>
+        <button id = "stop">Stop</button>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,86 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body{
+  text-align: center;
+  background: #00ECB9;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+h1{
+  color: #396;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+#clockdiv{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+#clockdiv > div{
+  padding: 10px;
+  border-radius: 3px;
+  background: #00BF96;
+  display: inline-block;
+}
+
+#clockdiv div > span{
+  padding: 15px;
+  border-radius: 3px;
+  background: #00816A;
+  display: inline-block;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 16px;
+}
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="blockedpage.js"></script>
+
+    
+  </head>
+  <body>
+    <div id="clockdiv">
+      <h1>Page blocked for:</h1>
+  <div>
+    <div id="days"></div>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <div id="hours"></div>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <div id="minutes"></div>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <div id="seconds"></div>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+  </body>
+</html>
